@@ -1,15 +1,17 @@
 package com.company;
 
+import java.time.LocalDate;
+
 public class Funcionario {
     public int idFunc;
     public String nomeFunc;
     public String departamento;
-    //public localdat dataContratacao;
+    public LocalDate dataContratacao;
     public double salario;
     public String documento;
     public boolean estaAtivo;
 
-    public void  atualizarSario(double aumento){
+    public void  atualizarSalario(double aumento){
         System.out.println("salario: " + salario);
         System.out.println("aumento: " + aumento);
         salario += aumento;
@@ -22,21 +24,25 @@ public class Funcionario {
 
         System.out.println("funcionario sendo demetido\n..............");
         estaAtivo = false;
-        System.out.println("o funcionario foi demetido");
+        System.out.println("o funcionario " + nomeFunc + " foi demetido");
 
     }
 
     public void imprimir(){
         System.out.println();
-        System.out.println("dados: ");
-        System.out.println("idFunc = " + idFunc);
-        System.out.println("nomeFunc = " + nomeFunc);
-        System.out.println("departamento = " + departamento);
-        //System.out.println("dataContratacao = " + dataContratacao);
-        System.out.println("salario = " + salario);
-        System.out.println("documento = " + documento);
-        System.out.println("estaAtivo = " + estaAtivo);
+        System.out.println("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
+        System.out.println("\t\tDADOS: ");
 
+        System.out.println("identificação: " + idFunc);
+        System.out.println("Nome: " + nomeFunc);
+        System.out.println("departamento: " + departamento);
+        System.out.println("dataContratacao: " + dataContratacao);
+        System.out.println("salario: " + salario);
+        System.out.println("documento: " + documento);
+        System.out.printf("esta Ativo: ");
+        if(estaAtivo == true) System.out.println("sim");
+        else System.out.println("não");
+        System.out.println("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
 
     }
 }
